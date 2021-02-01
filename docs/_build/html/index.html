@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to Instin’s documentation! &mdash; Instin 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> Instin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instin.html">Instin functions reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Instin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to Instin’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-instin-s-documentation">
+<h1>Welcome to Instin’s documentation!<a class="headerlink" href="#welcome-to-instin-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Instin is a wireless instrumentation control system based on gateways, which are in charge
+of receive the instrumentation commands from the host computer, send them to the instruments
+and reply the requested information (if any) to the host. This webpage contains the installation
+of the system and the description of each function of <code class="code docutils literal notranslate"><span class="pre">instin</span></code>, the Python package that
+enables the use of this wireless system from Python. It is based on the <a class="reference external" href="https://pyvisa.readthedocs.io/">PyVISA</a> and
+<a class="reference external" href="https://docs.python.org/3/library/socket.html">socket</a> Python packages.</p>
+<p>For a complete description of this system you can read the following publications:</p>
+<ul class="simple">
+<li><ol class="upperalpha simple" start="4">
+<li><p>Enériz, N. Medrano and B. Calvo, “Live Demonstration: A Low-Cost Wireless Instrumentation Control System,” <em>2020 IEEE International Symposium on Circuits and Systems (ISCAS)</em>, Sevilla, 2020, pp. 1-1, doi: <a class="reference external" href="http://bit.ly/39CpxdE">10.1109/ISCAS45731.2020.9180681</a>.</p></li>
+</ol>
+</li>
+<li><ol class="upperalpha simple" start="4">
+<li><p>Enériz, N. Medrano, B. Calvo and J. Pérez-Bailón, “A Wireless Instrumentation Control System Based on Low-Cost Single Board Computers,” <em>2020 IEEE International Instrumentation and Measurement Technology Conference (I2MTC)</em>, Dubrovnik, Croatia, 2020, pp. 1-5, doi: <a class="reference external" href="http://bit.ly/3oFe55c">10.1109/I2MTC43012.2020.9129142</a>.</p></li>
+</ol>
+</li>
+</ul>
+<p>If you find these useful, please consider their citation.</p>
+<p>Additionally, all the code is available on <a class="reference external" href="https://bit.ly/39z3LHC">Github</a>.</p>
+<div class="section" id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#previous-requirements">Previous requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#gateway-configuration">Gateway configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#host-pc-configuration">Host PC configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instin.html">Instin functions reference</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Daniel Enériz Orta
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instin functions reference &mdash; Instin 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Instin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instin functions reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Instin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Instin functions reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/instin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="instin-functions-reference">
+<h1>Instin functions reference<a class="headerlink" href="#instin-functions-reference" title="Permalink to this headline">¶</a></h1>
+<p>This page contains the details of each <code class="code docutils literal notranslate"><span class="pre">instin.py</span></code> function.</p>
+<span class="target" id="module-instin"></span><dl class="py function">
+<dt id="instin.close_term">
+<code class="sig-prename descclassname">instin.</code><code class="sig-name descname">close_term</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IP</span></em>, <em class="sig-param"><span class="n">PORT</span></em><span class="sig-paren">)</span><a class="headerlink" href="#instin.close_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>This reboots the gateway</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>IP</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Gateway’s IP</p></li>
+<li><p><strong>PORT</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – TCP port</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="instin.fillp2">
+<code class="sig-prename descclassname">instin.</code><code class="sig-name descname">fillp2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#instin.fillp2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auxiliary function for file transfer.</p>
+<p>Expands the file of the input path to have a size multiple of 512</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Input file path</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The new input file lenght</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="instin.open_inst">
+<code class="sig-prename descclassname">instin.</code><code class="sig-name descname">open_inst</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IP</span></em>, <em class="sig-param"><span class="n">PORT</span></em>, <em class="sig-param"><span class="n">VISA</span></em><span class="sig-paren">)</span><a class="headerlink" href="#instin.open_inst" title="Permalink to this definition">¶</a></dt>
+<dd><p>For opening instruments in the Gateway.</p>
+<p>The instrument whose VISA address is VISA is opened
+in the Gateway The IP and the PORT are needed as always.
+An example of VISA address: <code class="code docutils literal notranslate"><span class="pre">USB0::0x0957::0x179B::MY51250760::INSTR</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>IP</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Gateway’s IP</p></li>
+<li><p><strong>PORT</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – TCP port</p></li>
+<li><p><strong>VISA</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Instrument’s VISA address</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The integer identifier the Gateways has associated to the instrument.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="instin.query">
+<code class="sig-prename descclassname">instin.</code><code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IP</span></em>, <em class="sig-param"><span class="n">PORT</span></em>, <em class="sig-param"><span class="n">InstID</span></em>, <em class="sig-param"><span class="n">command</span></em><span class="sig-paren">)</span><a class="headerlink" href="#instin.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>To send SCPI commands and wait for an answer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>IP</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Gateway’s IP</p></li>
+<li><p><strong>PORT</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – TCP port</p></li>
+<li><p><strong>InstID</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Integer identifier the Gateway associated to the instrument when it was opened with <code class="code docutils literal notranslate"><span class="pre">open_inst</span></code></p></li>
+<li><p><strong>command</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – SCPI command to send to the Gateway</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The string answered by the instrumentation when sending the selected SCPI command.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="instin.send_program">
+<code class="sig-prename descclassname">instin.</code><code class="sig-name descname">send_program</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IP</span></em>, <em class="sig-param"><span class="n">PORT</span></em>, <em class="sig-param"><span class="n">NAME_IN</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">NAMEs_OUT</span></em><span class="sig-paren">)</span><a class="headerlink" href="#instin.send_program" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can be used to send an entire program to the Gateway.</p>
+<p>This enables the standalone mode, where all the measurement orders
+are coded in a program that is sent to the Gateway and launched. The
+host waits for receiving the files with the results of the measurement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>IP</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Gateway’s IP</p></li>
+<li><p><strong>PORT</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – TCP port</p></li>
+<li><p><strong>NAME_IN</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The name of the file with the program to be sent to the Gateway</p></li>
+<li><p><strong>*NAMEs_OUT</strong> – Name(s) of the file(s) that are going to be generated by the NAME_IN program and sent to the host</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="instin.sincro">
+<code class="sig-prename descclassname">instin.</code><code class="sig-name descname">sincro</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IP</span></em>, <em class="sig-param"><span class="n">PORT</span></em><span class="sig-paren">)</span><a class="headerlink" href="#instin.sincro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the time to the Gateway.</p>
+<p>Sends <code class="code docutils literal notranslate"><span class="pre">time.strftime('%m%d%H%M.%S')</span></code> to the Gateway in the IP through the PORT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>IP</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Gateway’s IP</p></li>
+<li><p><strong>PORT</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – TCP port</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="instin.write">
+<code class="sig-prename descclassname">instin.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IP</span></em>, <em class="sig-param"><span class="n">PORT</span></em>, <em class="sig-param"><span class="n">InstID</span></em>, <em class="sig-param"><span class="n">command</span></em><span class="sig-paren">)</span><a class="headerlink" href="#instin.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>To send SCPI commands without waiting for an answer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>IP</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Gateway’s IP</p></li>
+<li><p><strong>PORT</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – TCP port</p></li>
+<li><p><strong>InstID</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Integer identifier the Gateway associated to the instrument when it was opened with <code class="code docutils literal notranslate"><span class="pre">open_inst</span></code></p></li>
+<li><p><strong>command</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – SCPI command to send to the Gateway</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Daniel Enériz Orta
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

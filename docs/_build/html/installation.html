@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; Instin 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Instin functions reference" href="instin.html" />
+    <link rel="prev" title="Welcome to Instin’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Instin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#previous-requirements">Previous requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gateway-configuration">Gateway configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-configuration">Basic configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advance-configuration">Advance configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-port">Multiple port</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#static-ip">Static IP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#host-pc-configuration">Host PC configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="instin.html">Instin functions reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Instin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="previous-requirements">
+<h2>Previous requirements<a class="headerlink" href="#previous-requirements" title="Permalink to this headline">¶</a></h2>
+<p>There are some hardware requirements that are needed to use Instin:</p>
+<ul class="simple">
+<li><p><strong>A WiFi network</strong>. Is a WiFi-based system so it needs WiFi to work. Also you may consider that you will have to configure this WiFi network on the Raspberry-based gateways and, if the WiFi is protected with some certification more sophisticated than WPA2, as <a class="reference external" href="https://www.eduroam.org/">eduroam</a>, you will find yourself in a burdensome process. If this happens to you, we recommend to use a household router to create a dedicated WiFi network.</p></li>
+<li><p>At least one <strong>WiFi-enabled Raspberry Pi SBC</strong>. The gateways are Raspberry Pi SBC and they need to have a WiFi antenna. It should work on any of the WiFi-enabled Raspberry Pi SBCs but it has been only tested on the Raspberry Pi Zero W and the Raspberry Pi 3B.</p></li>
+<li><p><strong>A USB hub</strong> (<em>Only necessary on the Raspberry Pi Zero W</em>). The Raspberry Pi Zero W only has a mircoUSB port, but the instrumentation has been traditionally controlled using USB-B-to-USB-A cables, so one (at least) USB type A port is desirable. We solve this using the <a class="reference external" href="http://www.uugear.com/product/zero4u/">Zero4U USB hub</a>, specifically designed for the RPi Zero boards.</p></li>
+</ul>
+</div>
+<div class="section" id="gateway-configuration">
+<h2>Gateway configuration<a class="headerlink" href="#gateway-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-configuration">
+<h3>Basic configuration<a class="headerlink" href="#basic-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The gateway is based on a Raspberry Pi Zero W, since it has a very small form-factor and
+it has the enough features to have a good performance running the Instin system. In the
+next steps, we are assuming you got a <strong>fresh install</strong> of Raspbian on a Raspberry Pi and it is connected to the same WiFi network that the host PC is. Also, an access to the Raspberry terminal is required.
+It could be either by the Desktop or using SSH.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t know hot to install the OS on a Raspberry Pi you should check the <a class="reference external" href="https://www.raspberrypi.org/documentation/installation/">Raspberry documentation</a>. Also there are some there are some pages dedicated to the <a class="reference external" href="https://www.raspberrypi.org/documentation/configuration/wireless/">Wireless Connectivity</a></p>
+</div>
+<p>The fist thing to do is to install <code class="code docutils literal notranslate"><span class="pre">pyvisa</span></code> and <code class="code docutils literal notranslate"><span class="pre">pyvisa-py</span></code> packages. This can be done using pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip3 install pyvisa
+$ pip3 install pyvisa-py
+</pre></div>
+</div>
+<p>Then the <code class="code docutils literal notranslate"><span class="pre">autorun.py</span></code> file must be sent to the Raspberry-based gateways. In order to have it locatable, we recommend to place it on the Desktop folder. If you are using SSH you could send it through a FTP service, as <a class="reference external" href="https://filezilla-project.org/">Filezilia</a>. Also it can be downloaded running this lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /home/pi/Desktop
+$ wget https://raw.githubusercontent.com/eneriz-daniel/instin/main/autorun.py
+</pre></div>
+</div>
+<p>Additionally, in order to make the gateway ready each time it boots, we can configure a <a class="reference external" href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html">cron job</a> to launch <code class="code docutils literal notranslate"><span class="pre">autorun.py</span></code> when the Raspberry reboots. To do this we can create a crontab file for the Superuser:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo crontab -e
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This will ask you for the Raspberry password, as it is a Superuser action. We use this rol since it seems to be necessary to run some PyVISA functions.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If it is the first time using crontab since the install, this will ask you to choose the text editor. We recommend you to use <code class="code docutils literal notranslate"><span class="pre">nano</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">no</span> <span class="n">crontab</span> <span class="k">for</span> <span class="n">root</span> <span class="o">-</span> <span class="n">using</span> <span class="n">an</span> <span class="n">empty</span> <span class="n">one</span>
+
+<span class="n">Select</span> <span class="n">an</span> <span class="n">editor</span><span class="o">.</span>  <span class="n">To</span> <span class="n">change</span> <span class="n">later</span><span class="p">,</span> <span class="n">run</span> <span class="s1">&#39;select-editor&#39;</span><span class="o">.</span>
+<span class="mf">1.</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">nano</span>        <span class="o">&lt;----</span> <span class="n">easiest</span>
+<span class="mf">2.</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">vim</span><span class="o">.</span><span class="n">tiny</span>
+<span class="mf">3.</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">ed</span>
+
+<span class="n">Choose</span> <span class="mi">1</span><span class="o">-</span><span class="mi">3</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<p>Now the commands to be run at the reboot must be placed at the end of the file. Just add the last line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For example, you can run a backup of all your user accounts</span>
+<span class="c1"># at 5 a.m every week with:</span>
+<span class="c1"># 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/</span>
+<span class="nd">@reboot</span> <span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">Desktop</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">python3</span> <span class="n">autorun</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To save and exit from nano press <code class="code docutils literal notranslate"><span class="pre">Ctrl+X</span></code>, <code class="code docutils literal notranslate"><span class="pre">Y`to</span> <span class="pre">say</span> <span class="pre">yes</span> <span class="pre">when</span> <span class="pre">saving</span> <span class="pre">changes</span> <span class="pre">and</span> <span class="pre">then</span> <span class="pre">:code:`Enter</span></code> to exit.</p>
+</div>
+<p>Finally reboot your the gateway using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo reboot
+</pre></div>
+</div>
+<p>After the reboot it should be ready to receive orders from <code class="code docutils literal notranslate"><span class="pre">instin</span></code>.</p>
+</div>
+<div class="section" id="advance-configuration">
+<h3>Advance configuration<a class="headerlink" href="#advance-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The lines above contain the minimal steps to make <code class="code docutils literal notranslate"><span class="pre">autorun.py</span></code> run on the gateways, but some extra steps are necessary to have a better experience with instin. Although if you want to use just one gateway you can pass directly to the host PC configuration.</p>
+<div class="section" id="multiple-port">
+<h4>Multiple port<a class="headerlink" href="#multiple-port" title="Permalink to this headline">¶</a></h4>
+<p>This enables various ports in the same gateway. This can be handy when more than one gateways used. In this we are setting for ports to be open, but this can be scaled to any number.</p>
+<p>For this we are downloading the files in the <a class="reference external" href="https://github.com/eneriz-daniel/instin/tree/master/various-autoruns">various-autoruns folder</a> of the Github repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /home/pi/Desktop
+$ for i in {1..4}; do wget &quot;https://raw.githubusercontent.com/eneriz-daniel/instin/master/various-autoruns/autorun_$i.py&quot;; done
+</pre></div>
+</div>
+<p>Additionally, if the basic <code class="code docutils literal notranslate"><span class="pre">autorun.py</span></code> file has been downloaded previously, must be deleted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm autorun.py
+</pre></div>
+</div>
+<p>Finally, the crontab file must be also edited in order to launch this new files. Remeber you can access to there with the <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">crontab</span> <span class="pre">-e</span></code> and it should contain this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For example, you can run a backup of all your user accounts</span>
+<span class="c1"># at 5 a.m every week with:</span>
+<span class="c1"># 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/</span>
+<span class="nd">@reboot</span> <span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">Desktop</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">python3</span> <span class="n">autorun_1</span><span class="o">.</span><span class="n">py</span>
+<span class="nd">@reboot</span> <span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">Desktop</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">python3</span> <span class="n">autorun_2</span><span class="o">.</span><span class="n">py</span>
+<span class="nd">@reboot</span> <span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">Desktop</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">python3</span> <span class="n">autorun_3</span><span class="o">.</span><span class="n">py</span>
+<span class="nd">@reboot</span> <span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">Desktop</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">python3</span> <span class="n">autorun_4</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="static-ip">
+<h4>Static IP<a class="headerlink" href="#static-ip" title="Permalink to this headline">¶</a></h4>
+<p>The gateways’ IPs are needed in the <code class="code docutils literal notranslate"><span class="pre">instin</span></code> functions, so they must be found, for example using an IP Scanner. A better solution is to use static IPs on the Raspberry-based gateways. For this it is necessary to edit the <code class="code docutils literal notranslate"><span class="pre">/etc/dhcpcd.conf</span></code> with the details of your network.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the explanation to set the static IP on one Raspberry, if your using more than one, ensure to set different IPs. Otherwise there will be connection problems.</p>
+</div>
+<p>The first thing to do is to find your network details, for this you can use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ifconfig wlan0
+</pre></div>
+</div>
+<p>This will answer you something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wlan0</span>  <span class="n">Link</span> <span class="n">encap</span><span class="p">:</span><span class="n">Ethernet</span>  <span class="n">HWaddr</span> <span class="mi">58</span><span class="p">:</span><span class="n">a2</span><span class="p">:</span><span class="n">c2</span><span class="p">:</span><span class="mi">93</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mi">36</span>
+       <span class="n">inet</span> <span class="n">addr</span><span class="p">:</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.64</span>  <span class="n">Bcast</span><span class="p">:</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">2.255</span>  <span class="n">Mask</span><span class="p">:</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+       <span class="n">inet6</span> <span class="n">addr</span><span class="p">:</span> <span class="n">fe80</span><span class="p">::</span><span class="mi">6</span><span class="n">aa3</span><span class="p">:</span><span class="n">c4ff</span><span class="p">:</span><span class="n">fe93</span><span class="p">:</span><span class="mi">4746</span><span class="o">/</span><span class="mi">64</span> <span class="n">Scope</span><span class="p">:</span><span class="n">Link</span>
+       <span class="n">UP</span> <span class="n">BROADCAST</span> <span class="n">RUNNING</span> <span class="n">MULTICAST</span>  <span class="n">MTU</span><span class="p">:</span><span class="mi">1500</span>  <span class="n">Metric</span><span class="p">:</span><span class="mi">1</span>
+       <span class="n">RX</span> <span class="n">packets</span><span class="p">:</span><span class="mi">436968</span> <span class="n">errors</span><span class="p">:</span><span class="mi">0</span> <span class="n">dropped</span><span class="p">:</span><span class="mi">0</span> <span class="n">overruns</span><span class="p">:</span><span class="mi">0</span> <span class="n">frame</span><span class="p">:</span><span class="mi">0</span>
+       <span class="n">TX</span> <span class="n">packets</span><span class="p">:</span><span class="mi">364103</span> <span class="n">errors</span><span class="p">:</span><span class="mi">0</span> <span class="n">dropped</span><span class="p">:</span><span class="mi">0</span> <span class="n">overruns</span><span class="p">:</span><span class="mi">0</span> <span class="n">carrier</span><span class="p">:</span><span class="mi">0</span>
+       <span class="n">collisions</span><span class="p">:</span><span class="mi">0</span> <span class="n">txqueuelen</span><span class="p">:</span><span class="mi">1000</span>
+       <span class="n">RX</span> <span class="nb">bytes</span><span class="p">:</span><span class="mi">115886055</span> <span class="p">(</span><span class="mf">110.5</span> <span class="n">MiB</span><span class="p">)</span>  <span class="n">TX</span> <span class="nb">bytes</span><span class="p">:</span><span class="mi">83286188</span> <span class="p">(</span><span class="mf">79.4</span> <span class="n">MiB</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where it is shown that your IP is <code class="code docutils literal notranslate"><span class="pre">192.168.1.64</span></code> and your mask <code class="code docutils literal notranslate"><span class="pre">255.255.255.0</span></code>. Also the router IP is needed, this can be queried by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ netstat -nr
+</pre></div>
+</div>
+<p>Which answer could be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Destination</span>    <span class="n">Gateway</span>      <span class="n">Genmask</span>
+<span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span>  <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>
+<span class="mf">192.168</span><span class="o">.</span><span class="mf">1.0</span>    <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>      <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+</pre></div>
+</div>
+<p>So the router IP is <code class="code docutils literal notranslate"><span class="pre">192.168.1.1</span></code>. Once you have the Raspberry IP, the mask and the router IP, you have you edit the following file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo nano /etc/dhcpcd.conf
+</pre></div>
+</div>
+<p>And introduce something like this on the top</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ensure to use your use your correct IPs both router’s and Raspberry’s if not you can lose the Raspberry connection if working through SSH.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">interface</span> <span class="n">wlan0</span>
+<span class="n">static</span> <span class="n">ip_address</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.15</span><span class="o">/</span><span class="mi">24</span>
+<span class="n">static</span> <span class="n">routers</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span>
+<span class="n">static</span> <span class="n">domain_name_servers</span><span class="o">=</span><span class="mf">8.8</span><span class="o">.</span><span class="mf">8.8</span> <span class="mf">8.8</span><span class="o">.</span><span class="mf">4.4</span>
+</pre></div>
+</div>
+<p>Where <code class="code docutils literal notranslate"><span class="pre">192.168.1.15</span></code> is the desired static IP</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This example assumes that your subnet mask is Class C, i.e., <code class="code docutils literal notranslate"><span class="pre">255.255.255.0</span></code>, that is marked as <code class="code docutils literal notranslate"><span class="pre">/24</span></code> in the <code class="code docutils literal notranslate"><span class="pre">/etc/dhcpcd.conf</span></code> new lines. If yours is <code class="code docutils literal notranslate"><span class="pre">255.255.0.0</span></code> you should use <code class="code docutils literal notranslate"><span class="pre">/16</span></code> and if it is <code class="code docutils literal notranslate"><span class="pre">255.0.0.0</span></code> the correct is <code class="code docutils literal notranslate"><span class="pre">/8</span></code>. Check this <a class="reference external" href="https://www.youtube.com/watch?v=D1eD60_jhKI">video</a> for a better explanation.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="host-pc-configuration">
+<h2>Host PC configuration<a class="headerlink" href="#host-pc-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The configuration of the Host PC is simpler. It is only necessary to make <code class="code docutils literal notranslate"><span class="pre">instin.py</span></code> accessible to the program you are going to code the measurement orders. An easy solution is to save it in the same directory, but a better one is to copy the <code class="code docutils literal notranslate"><span class="pre">instin.py</span></code> file in a directory added to the <code class="code docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>. To get show the directories added to the <code class="code docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> is possible to use the following Python code:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+</div>
+<p>Then you can copy <code class="code docutils literal notranslate"><span class="pre">instin.py</span></code> to any directory shown after <code class="code docutils literal notranslate"><span class="pre">sys.path</span></code>, allowing its importation from any Python program.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="instin.html" class="btn btn-neutral float-right" title="Instin functions reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Instin’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Daniel Enériz Orta
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
