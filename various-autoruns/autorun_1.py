@@ -36,38 +36,38 @@ def fillp2(path: str) -> int:
     
     return new_file_len
 
-def sen_msg(host: socket.socket, msg: str) -> None:
+def send_msg(host: socket.socket, msg: str) -> None:
     data = msg.encode('ASCII')
     host.send(data)
 
 def receive_msg(host):
     data = host.recv(BUFF)
-    mensaje = data.decode('ASCII')
+    msg = data.decode('ASCII')
 
-    return mensaje
+    return msg
 
 def launch_program(host, path_in):
     #Receiving program to run
     fin = open(path_in,'wb')
     
     n_paths_out = receive_msg(host)
-    print('Nuemro de archivos de salida: '+n_paths_out)
-    sen_msg(host, 'Archivos de salida '+ n_paths_out)
+    print('Output files number: '+n_paths_out)
+    send_msg(host, 'Output files number'+ n_paths_out)
     
     paths_out = []
     
     for pout in range(int(n_paths_out)):
         paths_out.append(receive_msg(host))
-        sen_msg(host, 'Archivo de salida '+str(pout)+':'+paths_out[pout])
+        send_msg(host, 'Output file '+str(pout)+':'+paths_out[pout])
     
-    #Recibimos el tamaño del trograma de salida
+    #Receiving the input file length
     fin_lengh = receive_msg(host)
     print(int(fin_lengh))
-    print('Tamaño programa entrada ' + fin_lengh)
+    print('Input file length ' + fin_lengh)
     
-    sen_msg(host, 'El tamano del programa de entrada es '+fin_lengh)
+    send_msg(host, 'Input file length '+fin_lengh)
 
-    print('Recibimos el progama a ejecutar')
+    print('Receiving input file')
     n_paq = int(fin_lengh)/512
     print(n_paq)
     for k in range(int(n_paq)):
@@ -76,28 +76,27 @@ def launch_program(host, path_in):
         fin.write(data)
     fin.close()
 
-    sen_msg(host, 'Programa recibido')
+    send_msg(host, 'Input file received')
     
-    print('Programa iniciandose')
-    os.system('sudo python3 '+path_in) #Lanzamos el programa
-    print('Fin de ejecución del programa, devolviendo archivos de salida')
+    print('Running input file')
+    os.system('sudo python3 '+path_in)
+    print('Input file execution completed, sending output files to host')
     
-    for pout in range(int(n_paths_out)):
+    for pout in range(int(n_paths_out)): #Sending output files
         print(receive_msg(host))
         
         leng = fillp2(paths_out[pout])
-        print('Tamaño programa salida ' + str(pout) + ': '+ str(leng))
+        print('Output file ' + str(pout) + ' length: '+ str(leng))
         
-        #Envaimos el numero de paquetes de 512 b de los programas de salida
-        n_paq = int(leng)/512.0
-        sen_msg(host, str(n_paq))
+        n_paq = int(leng)/512.0 #Sending the number of packets to receive
+        send_msg(host, str(n_paq))
         print(n_paq)
         
         file_out = open(paths_out[pout],'rb')
         
         print(receive_msg(host))
 
-        for k in range(int(n_paq)):
+        for k in range(int(n_paq)): #Sending the packets of the output file
             data = file_out.read(512)
             print(data)
             host.send(data)
@@ -108,85 +107,91 @@ def launch_program(host, path_in):
         sleep(1)
         
 
-    print('Datos enviados')
+    print('Output files sent')
 
 
-rm=pyvisa.ResourceManager('@py') #Añadir '@py' al pasar a Linux
+rm=pyvisa.ResourceManager('@py') #Using pyvisa-py drivers
 
-#Creamos el objeto socket:
+#Creating the socket object:
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) #Nos permite usar el mismo puerto
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) #Reusing the same port
 try:
     s.bind(('', port))
 except socket.error as err:
     print('Bind failed')
     print(err)
-s.listen(N_links) #Limitamos el número de clientes que se pueden conectar al servidor
+s.listen(N_links) #Limiting the number of clients able to connect to the gateway
 print('Socket awaiting messages')
 
-(conn, addr) = s.accept() #Nos conectamos
+(conn, addr) = s.accept() #Connecting to the host
 print('Connected to ' + str(addr))
 msg = receive_msg(conn)
-os.system('sudo date ' + msg) #Ponemos en hora la Raspi Quitar el comentario al pasar a linux
+os.system('sudo date ' + msg) #Setting the datetime
 conn.close()
 
-print('Inicio programa')
+print('Program start')
 
 inst = []
 inst.append(0)
 
 while True:
-    (conn, addr) = s.accept() #Nos conectamos
+    (conn, addr) = s.accept()
     print('Connected to ' + str(addr))
     
-    msg = receive_msg(conn) #Leemos el mensaje
-    print("Mensaje recibido: "+msg)
+    msg = receive_msg(conn) #Receiving a packet from host
+    print("Packet received: "+msg)
     
     if msg[0] == 'p':
-        sen_msg(conn, 'Abriendo '+msg[1:])
+        send_msg(conn, 'Launching '+msg[1:])
         launch_program(conn, msg[1:])
     else:
         n_inst = int(msg[0])
         msg = msg[1:]
 
-        if n_inst == 0: #Si pasamos un cero es porque abrimos nuevo intrumento
-            print("Intentando abrir un instrumento...")
+        if n_inst == 0: #If header is a '0' it is an opening-instrument order
+            print("Opening instrument...")
+
             try:
                 inst.append(rm.open_resource(msg))
-                sen_msg(conn, str(len(inst)-1)) #devolvemos el ID que le asigna la RasPi al nuevo instruemnto
+                send_msg(conn, str(len(inst)-1)) #Sending back the position in the instrument tuple, that is de ID
                 print("Ok!\n")
+
+            #Possible errors handling
             except IndexError:
-                sen_msg(conn, "IndexError: VISA not correct")
+                send_msg(conn, "IndexError: VISA not correct")
                 print('Error\n')
             except ValueError:
-                sen_msg(conn, "ValueError: VISA not correct")
+                send_msg(conn, "ValueError: VISA not correct")
                 print('Error\n')
             except pyvisa.errors.VisaIOError:
-                sen_msg(conn, "VisaIOError: Insufficient location information or the requested device or resource is not present in the system.")
+                send_msg(conn, "VisaIOError: Insufficient location information or the requested device or resource is not present in the system.")
                 print('Error\n')
             except:
-                sen_msg(conn, "Unexpected Error")
+                send_msg(conn, "Unexpected Error")
                 print('Error\n')
-            
-        elif '?' in msg: #Si el mensaje tiene ? es query
-            print("Recibido query...")
+        
+        #If the header is not '0', then it is the instrument where the order must be done ID
+        elif '?' in msg: #If the data in the packet has a '?' it is a query statement
+            print("Query received...")
             try:
                 data = inst[n_inst].query(msg)
-                sen_msg(conn, str(data))
+                send_msg(conn, str(data)) #Sending the queried data
                 print("Ok!\n")
+            
+            #Possible errors handling
             except pyvisa.errors.VisaIOError:
-                sen_msg(conn, 'VisaIOError: Visa communication error on query')
+                send_msg(conn, 'VisaIOError: Visa communication error on query')
                 print("Error\n")
             except:
-                sen_msg(conn, 'Unexpected Error')
+                send_msg(conn, 'Unexpected Error')
                 print("Error\n")
 
-        elif msg == 'close': #Si el mensaje es close apagamos
+        elif msg == 'close': #If data in the packet is 'close' then is a reboot order
             conn.close()
             s.close()
             os.system('reboot')
 
-        else: #Ya sólo nos queda que sea un write
+        else: #If it is not none of those, it must be a query statement
             inst[n_inst].write(msg)
 
     conn.close()
